@@ -130,7 +130,7 @@ class Record:
             return False
     
     def __str__(self):
-        return f"Name: {self.name.value}, Phones: {', '.join(str(phone) for phone in self.phones)}"
+        return f"Name+: {self.name.value}, Phones+: {', '.join(str(phone) for phone in self.phones)}"
 
 
 class Field:
@@ -212,6 +212,8 @@ def add_contact(adr_book, name, phone):
             existing_record.add_phone(phone_u)
         else:
             record = Record(name_u)
+            #print(record)
+            
             
             record.add_phone(phone_u)
             adr_book.add_record(record)
